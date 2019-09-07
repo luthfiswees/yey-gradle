@@ -1,5 +1,7 @@
 package structure.list;
 
+// Class YeyList is my take to implement List data structure from scratch
+// Wkwkwkwkwkwk
 public class YeyList {
 
   private String[] yeyArray;
@@ -52,30 +54,38 @@ public class YeyList {
   }
 
   public String get(int index) {
+    // Return array element in index specified
     return this.yeyArray[index];
   }
 
   public void update(int index, String newValue) {
+    // Replace value of array in index specified
     this.yeyArray[index] = newValue;
   }
 
   public int count() {
+    // Check if the array is null, if it's null. Return zero length
     if (this.yeyArray == null) return 0;
+
+    // Return the length of the array for normal case
     return (this.yeyArray.length);
   }
 
   public boolean isEmpty() {
-    return (this.yeyArray == null);
+    // Check if array doesn't declared yet
+    return ((this.yeyArray == null) || (this.yeyArray.length == 0));
   }
 
   public void printList() {
     for(int i=0; i<count(); i++) {
+      // Print element
       System.out.println(this.yeyArray[i]);
     }
   }
 
   // Private functions
   private boolean isArrayFull() {
+    // Check if the last element of the array is occupied
     return (this.yeyArray[count()-1] != null);
   }
 }
