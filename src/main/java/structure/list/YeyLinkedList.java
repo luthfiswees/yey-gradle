@@ -74,4 +74,15 @@ public class YeyLinkedList {
   public boolean isEmpty() {
     return (this.head == null);
   }
+
+  public void printList() {
+    YeyLinkedListNode temp = this.head;
+
+    if (!isEmpty()) System.out.println(temp.data);
+
+    while (temp.next != null){
+      temp = temp.next;
+      System.out.println(temp.data);
+    }
+  }
 }
