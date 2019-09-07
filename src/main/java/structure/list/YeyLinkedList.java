@@ -25,6 +25,22 @@ public class YeyLinkedList {
     }
   }
 
+  public void store(int index, String element) {
+    int counter = 0;
+    YeyLinkedListNode tail;
+    YeyLinkedListNode temp = this.head;
+    YeyLinkedListNode newElement = new YeyLinkedListNode(element);
+
+    while (counter < index-1) {
+      temp = temp.next;
+      counter++;
+    }
+      
+    tail = temp.next;
+    temp.next = newElement;
+    temp.next.next = tail;
+  }
+
   public String get(int index) {
     YeyLinkedListNode temp = this.head;
     

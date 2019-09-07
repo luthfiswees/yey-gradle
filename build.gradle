@@ -32,3 +32,11 @@ application {
     // Define the main class for the application
     mainClassName = 'yey.gradle.App'
 }
+
+test {
+    // Make sure that task clean test is executed when running test
+    dependsOn cleanTest
+
+    // Shows standard output when running test
+    testLogging.showStandardStreams = true
+}

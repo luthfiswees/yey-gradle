@@ -34,6 +34,38 @@ public class YeyList {
     this.yeyArray[currentLength] = element;
   }
 
+  public void store(int index, String element) {
+    // Call the length of the array
+    int currentLength = count();
+
+    // Check if current list is empty?
+    if (isEmpty()){
+      this.yeyArray = new String[currentLength+1];
+    }
+
+    // Check if array is already full
+    if (isArrayFull()) {
+      // Create new array
+      String[] newArray = new String[currentLength+1];
+
+      // Copy every element of the array up to the index specified
+      for(int i=0; i < index; i++) {
+        newArray[i] = this.yeyArray[i];
+      }
+
+      // Add new element here
+      newArray[index] = element;
+
+      // Copy the rest of the array
+      for(int i=index; i < currentLength; i++) {
+        newArray[i+1] = this.yeyArray[i];
+      }
+
+      // Replace current array with the new ones
+      this.yeyArray = newArray;
+    }
+  }
+
   public void remove(int index) {
     // Create new array
     int currentLength = count();

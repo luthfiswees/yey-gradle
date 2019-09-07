@@ -16,6 +16,27 @@ public class YeyListTest {
     assertEquals("Ayam", classUnderTest.get(0));
   }
 
+  @Test public void testStoreWithIndex() {
+    YeyList classUnderTest = new YeyList();
+
+    classUnderTest.store("Saitama");
+    classUnderTest.store("Bang");
+    classUnderTest.store("Atomic Samurai");
+
+    assertEquals(3, classUnderTest.count());
+    assertEquals("Saitama", classUnderTest.get(0));
+    assertEquals("Bang", classUnderTest.get(1));
+    assertEquals("Atomic Samurai", classUnderTest.get(2));
+
+    classUnderTest.store(1, "Tatsumaki");
+
+    assertEquals(4, classUnderTest.count());
+    assertEquals("Saitama", classUnderTest.get(0));
+    assertEquals("Tatsumaki", classUnderTest.get(1));
+    assertEquals("Bang", classUnderTest.get(2));
+    assertEquals("Atomic Samurai", classUnderTest.get(3));
+  }
+
   @Test public void testRemove() {
     YeyList classUnderTest = new YeyList();
 
