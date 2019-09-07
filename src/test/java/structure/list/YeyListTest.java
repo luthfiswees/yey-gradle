@@ -1,5 +1,8 @@
 package structure.list;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -63,5 +66,31 @@ public class YeyListTest {
     classUnderTest.remove(0);
 
     assertEquals(true, classUnderTest.isEmpty());
+  }
+
+  @Test public void testPrintList() throws Exception {
+    // Define class under test
+    YeyList classUnderTest = new YeyList();
+
+    // Populate list
+    classUnderTest.store("Hello");
+    classUnderTest.store("World");
+
+    // Direct System.out outputs to PrintStream
+    ByteArrayOutputStream bo = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(bo));
+
+    // Call function under test
+    classUnderTest.printList();
+
+    // Flush content off ByteArrayOutputStream
+    bo.flush();
+
+    // Extract content from ByteArrayOutputStream
+    String outputLines = new String(bo.toByteArray());
+
+    // Start asserting
+    assertTrue(outputLines.contains("Hello"));
+    assertTrue(outputLines.contains("World"));
   }
 }
