@@ -18,6 +18,27 @@ public class YeyLinkedListTest {
     assertEquals("Weber", classUnderTest.get(1));
   }
 
+  @Test public void testStoreWithIndex() {
+    YeyLinkedList classUnderTest = new YeyLinkedList();
+
+    classUnderTest.store("Saitama");
+    classUnderTest.store("Bang");
+    classUnderTest.store("Atomic Samurai");
+
+    assertEquals(3, classUnderTest.count());
+    assertEquals("Saitama", classUnderTest.get(0));
+    assertEquals("Bang", classUnderTest.get(1));
+    assertEquals("Atomic Samurai", classUnderTest.get(2));
+
+    classUnderTest.store(1, "Tatsumaki");
+
+    assertEquals(4, classUnderTest.count());
+    assertEquals("Saitama", classUnderTest.get(0));
+    assertEquals("Tatsumaki", classUnderTest.get(1));
+    assertEquals("Bang", classUnderTest.get(2));
+    assertEquals("Atomic Samurai", classUnderTest.get(3));
+  }
+
   @Test public void testUpdate() {
     YeyLinkedList classUnderTest = new YeyLinkedList();
 
@@ -87,5 +108,5 @@ public class YeyLinkedListTest {
     // Start asserting
     assertTrue(outputLines.contains("Flamingo"));
     assertTrue(outputLines.contains("Swallow"));
-  }  
+  }
 }
