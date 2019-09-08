@@ -3,7 +3,10 @@ install: true
 
 os: linux
 dist: trusty
-jdk: oraclejdk8
+jdk: oraclejdk11
 
 script:
   - ./gradlew test
+
+after_succes:
+  - ./gradlew jacocoTestReport coveralls
