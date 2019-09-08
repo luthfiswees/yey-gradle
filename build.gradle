@@ -47,11 +47,6 @@ test {
     testLogging.showStandardStreams = true
 }
 
-// cobertura vars 
-cobertura {
-    // cobertura coverage source directories
-    coverageSourceDirs = sourceSets.main.groovy.srcDirs
-
-    // Available reporting formats
-    coverageFormats = ['html', 'xml']
-}
+// cobertura vars
+cobertura.coverageSourceDirs = sourceSets.main.groovy.srcDirs
+cobertura.coverageFormats = ['html', 'xml']
