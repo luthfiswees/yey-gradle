@@ -40,5 +40,9 @@ public class YeyStackTest {
     classUnderTest.push("Halo");
 
     assertEquals(2, classUnderTest.size());
+
+    assertEquals("Halo", classUnderTest.pop());
+    assertEquals("Semua", classUnderTest.pop());
+    assertEquals(0, classUnderTest.size());
   }
 }

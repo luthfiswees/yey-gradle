@@ -28,11 +28,12 @@ public class YeyStack {
 
   public int size() {
     int counter = 1;
+    YeyStackNode temp = this.top;
 
     if (isEmpty()) return 0;
 
-    while (top.next != null) {
-      top = top.next;
+    while (temp.next != null) {
+      temp = temp.next;
       counter++;
     }
 
