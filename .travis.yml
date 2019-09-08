@@ -7,3 +7,6 @@ jdk: oraclejdk8
 
 script:
   - ./gradlew test
+
+after_succes:
+  - ./gradlew cobertura coveralls
