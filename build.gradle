@@ -47,6 +47,10 @@ test {
     testLogging.showStandardStreams = true
 }
 
+// Apply plugins
+apply plugin: 'net.saliman.cobertura'
+apply plugin: 'com.github.kt3k.coveralls'
+
 // cobertura vars
 cobertura.coverageSourceDirs = sourceSets.main.groovy.srcDirs
 cobertura.coverageFormats = ['html', 'xml']
