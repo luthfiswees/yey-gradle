@@ -3,20 +3,12 @@
  */
 package yey.gradle;
 
-import structure.list.YeyList;
-
 public class App {
     public String getGreeting() {
-        return "Hello to the Exhilarating world of list";
+        return "Welcome to Yey Gradle";
     }
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
-
-        YeyList newList = new YeyList();
-
-        newList.store("Hello");
-        newList.store("Gradle");
-        newList.printList();
     }
 }
